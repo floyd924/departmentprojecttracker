@@ -35,29 +35,16 @@ public class DepartmentprojectrackerApplicationTests {
 	}
 
 
-//	@Test
-//	public void createPirateAndShip(){
-//		Ship ship = new Ship("The Flying Dutchman");
-//		shipRepository.save(ship);
-//
-//		Pirate pirate1 = new Pirate("Jack", "Sparrow", 32, ship);
-//		pirateRepository.save(pirate1);
-//	}
-//
-//	@Test
-//	public void addPiratesAndRaids(){
-//		Ship ship = new Ship("The Flying Dutchman");
-//		shipRepository.save(ship);
-//
-//		Pirate pirate1 = new Pirate("Jack", "Sparrow", 32, ship);
-//		pirateRepository.save(pirate1);
-//
-//		Raid raid1 = new Raid("Tortuga", 100);
-//		raidRepository.save(raid1);
-//
-//		raid1.addPirate(pirate1);
-//		raidRepository.save(raid1);
-//
-//	}
+	@Test
+	public void addEmployeeAndProject() {
+		Department department = new Department("Engineering");
+		departmentRepository.save(department);
 
+		Employee employee = new Employee("Barry", "Chuckle", 8, department);
+		employeeRepository.save(employee);
+
+		Project project = new Project("CalculatorJave", 2);
+		project.addEmployee(employee);
+		projectRepository.save(project);
+	}
 }
